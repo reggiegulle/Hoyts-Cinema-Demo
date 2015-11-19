@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta property="og:url" content="http://cinemademo.comyr.com"/>
+<meta property="og:title" content="Cinema Website Demo"/>
+<meta property="og:image" content="http://cinemademo.comyr.com/images/ogthumb.png"/>
+<meta property="og:description" content="Cinema Website Demo With Browsing and Purchase Action Button Navigation in One Page"/>
+
+<title>HOYTS Cinemas Study</title>
+
+<link href="css/cssreset.min.css" rel="stylesheet" type="text/css" media="screen">
+<link href="http://fonts.googleapis.com/css?family=Sintony" rel="stylesheet" type="text/css">
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
+<link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" media="screen">
+<link href="css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
+<link href="css/dataTables.responsive.min.css" rel="stylesheet" type="text/css" media="screen">
+<link href="css/jquery.dataTables.yadcf.min.css" rel="stylesheet" type="text/css" media="screen">
+<link href="owl-carousel/owl.carousel.min.css" rel="stylesheet" type="text/css" media="screen">
+<link href="owl-carousel/owl.theme.min.css" rel="stylesheet" type="text/css" media="screen">
+<link media="all" href="css/bannermediaplayer.min.css" type="text/css" rel="stylesheet"> 
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="js/dataTables.responsive.min.js" type="text/javascript"></script>
+<script src="js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+<script src="js/jquery.dataTables.yadcf.min.js" type="text/javascript"></script>
+<script src="owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
+<script src="js/bannermediaplayer.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(window).load(function(){
+		$("#dvLoading").fadeOut(2000);
+	});
+</script>
+</head>
+<body>
+<script type="text/javascript">
+  var tag=document.createElement("script");tag.src="https://www.youtube.com/iframe_api";var firstScriptTag=document.getElementsByTagName("script")[0];firstScriptTag.parentNode.insertBefore(tag,firstScriptTag);
+</script>
+<div id="dvLoading">
+</div>
+	<div id="mockHeader">
+		<img src="images/01.01.01.png" alt="" width="1062px" height="156px" />
+	</div>
+	
+	<div id="bannermedia-Container">
+		<article id="bannermediaplayer-Container">
+			<article id="media-player-background">
+				<ul id="movieposters">
+				</ul>
+			</article>
+			
+			<article id="norminfo">
+				<div>
+					<button class="buynow">BUY NOW</button>
+					<button class="showinfo">SHOW INFO</button>
+					<button class="hideinfo">HIDE INFO</button>
+				</div>
+			</article>
+			
+			<article id="media-player-container">
+				<div id="player"></div>
+			</article>
+		</article>
+		
+		
+		<article id="responsiveinfo">
+			<ul>
+				<li><button id="buynow">BUY NOW</button></li>
+				<li><button id="showinfo">SHOW INFO</button></li>
+				<li><button id="hideinfo">HIDE INFO</button></li>
+			</ul>
+		</article>
+		
+		<article id="desclist-Container">
+			<ul id="desclist">
+			</ul>
+		</article>
+		<article id="owl-Container">
+			<ul id="owlyoutube">
+			</ul>
+		</article>
+			
+		<ul id="filters">
+			<li><p>Filter By</p>
+				<div  id="filterclassbutton" class="gradient">Classification</div>
+				<div id="filterclass">
+				</div>
+			</li>
+			<li><p>Filter By</p>
+				<div id="filterpricebutton" class="gradient">Ticket Price</div>
+				<div id="filterprice">
+				</div>
+			</li>
+			<li><p>Select By</p>
+				<div id="filtertitlebutton" class="gradient">Movie Title</div>
+				<div id="filtertitle">
+				</div>
+			</li>
+			<li>
+				<div id="filterreset" class="gradient" onclick="yadcf.stopPropagation(event); yadcf.doFilter('clear', '-youtubetable', 2); yadcf.doFilter('clear', '-youtubetable', 8); yadcf.doFilter('clear', '-youtubetable', 9);return false;">Reset Filter</div>
+			</li>
+		</ul>
+			
+		<ul id="tableCustomControls">
+			<li><p>Sort By</p>
+				<div id="sortpopularity">Popularity</div>
+			</li>
+			<li><p>Sort By Title</p>
+				<div id="atoztitle">A-Z</div>
+				<div id="ztoatitle">Z-A</div>
+			</li>
+			<li><p>Sort By Release Date</p>
+				<div id="latestoldestdate">Latest-Oldest</div>
+				<div id="oldestlatestdate">Oldest-Latest</div>
+			</li>
+			<li><p>Sort By Ticket Price</p>
+				<div id="lowesthighestprice">Lowest - Highest</div>
+				<div id="highestlowestprice">Highest - Lowest</div>
+			</li>
+			<li><p>Sort By</p>
+				<div id="sortclassification">Classification</div>
+			</li>
+			<li>
+				<label>
+					Search:
+					<input type="text" id="customSearch">
+				</label>
+				<img id="searchicon" src="images/search_icon.png" alt="" width="25px" height="25px" />
+				<div id="searchreset" class="gradient">Reset Search</div>
+			</li>
+			
+		</ul>
+			
+		<article id="table-Container" class="table-responsive">
+			<table id="youtubetable" class="table table-bordered dt-responsive nowrap">
+				<thead>
+					<tr>
+						<th><h4>Details</h4></th>
+						<th><h4>Date Showing</h4></th>
+						<th><h4>Title</h4></th>
+						<th><h4>Image</h4></th>
+						<th><h4>Starring</h4></th>
+						<th><h4>Synopsis</h4></th>
+						<th><h4>Director/s</h4></th>
+						<th><h4>Production</h4></th>
+						<th><h4>Classification</h4></th>
+						<th><h4>Ticket Price</h4></th>
+					</tr>
+				</thead>
+			</table>
+		</article>
+		
+	</div>
+	<div id="mockTheRest">
+		<img src="images/01.02.png" alt="" width="1038px" height="3379px" />
+	</div>
+<!--YouTube Script-->
+<script type="text/javascript">
+	function onYouTubeIframeAPIReady(){player=new YT.Player("player",{height:"100%",width:"100%",videoId:"",playerVars:{autohide:1,controls:2,enablejsapi:1,iv_load_policy:3,modestbranding:1,playsinline:1,rel:0,showinfo:0},events:{onReady:onPlayerReady,onStateChange:onPlayerStateChange}})}function onPlayerReady(e){var t=[];$("#youtubetable tbody tr").each(function(){var e=$(this).data("videoid");t.push(e)});var n=t.join(",");player.cuePlaylist(n);var r=$("#youtubetable").DataTable();r.on("draw.dt",function(){while(t.length>0){t.pop()}$("#youtubetable tbody tr").each(function(){var e=$(this).data("videoid");t.push(e)});var e=t.join(",");player.cuePlaylist(e)});$("#youtubetable tbody tr td img").each(function(){$(this).click(function(){var e=$(this).closest("tr").attr("data-index");player.playVideoAt(e);$("html, body").animate({scrollTop:$("#media-player-container").offset().top},500)})});$("select").change(function(){$("html, body").animate({scrollTop:$("#youtubetable").offset().top},0)});$(".showinfo").show();$(".hideinfo").hide();$("#desclist-Container").hide();$(window).resize(function(){$(".showinfo").show();$(".hideinfo").hide();$("#desclist-Container").hide()});$(".showinfo").click(function(){$(this).hide();$(".hideinfo").show();$("#desclist-Container").show()});$(".hideinfo").click(function(){$(this).hide();$(".showinfo").show();$("#desclist-Container").hide()});$("#showinfo").show();$("#hideinfo").hide();$("#desclist-Container").hide();$(window).resize(function(){$("#showinfo").show();$("#hideinfo").hide();$("#desclist-Container").hide()});$("#showinfo").click(function(){$(this).hide();$("#hideinfo").show();$("#desclist-Container").show()});$("#hideinfo").click(function(){$(this).hide();$("#showinfo").show();$("#desclist-Container").hide()})}function onPlayerStateChange(e){if(YT.PlayerState.PLAYING){var t=player.getPlaylistIndex();$("#desclist li").each(function(){if($(this).data("index")==t){$(this).show()}else{$(this).hide()}});$("#owlyoutube li").each(function(){if($(this).data("index")==t){$(this).removeClass("normalowlli");$(this).addClass("highlightowlli")}else{$(this).removeClass("highlightowlli");$(this).addClass("normalowlli")}});$("#owlyoutube li").each(function(){if($(this).hasClass("highlightowlli")){var e=$(this).data("pos");var t=$("#movieposters");t.trigger("owl.goTo",e)}})}if(YT.PlayerState.PAUSED){var n=$("#owlyoutube");$("#owlyoutube li").each(function(){if($(this).hasClass("highlightowlli")){n.trigger("owl.goTo",$("#owlyoutube li").index(this))}})}}var player
+</script> 
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+</body>
+</html>
